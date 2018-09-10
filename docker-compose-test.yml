@@ -1,0 +1,11 @@
+version: '2'
+services:
+  test_robot:
+    image: microsoft/dotnet:2.1-sdk-alpine
+    container_name: test-robot
+    network_mode: bridge
+    command: /bin/sh -e -c "cd /app/test/RoboCore.Unit; dotnet restore; dotnet test;"
+    volumes:
+      - $PWD:/app
+    mem_limit: 1000M
+    memswap_limit: 1000M
