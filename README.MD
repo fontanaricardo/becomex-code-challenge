@@ -12,7 +12,7 @@ To build and execute the container execute:
 
 ```
 docker build -t robot .
-docker run robot
+docker run -p 80:80 robot
 ```
 
 The web page to operate the robot will be in http://localhost/swagger.
